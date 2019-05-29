@@ -1,0 +1,16 @@
+version: "3.7"
+services: 
+  ap:
+    build: ./ap
+    command: ["rails", "s", "-b", "0.0.0.0"]
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: ./ap/app
+        target: /app
+      - type: volume
+        source: bundler
+        target: /usr/local/bundle
+volumes:
+  bundler:
