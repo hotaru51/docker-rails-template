@@ -2,6 +2,7 @@ FROM node:10.15.3-stretch AS node
 FROM ruby:2.6.3-stretch
 
 ENV YARN_VERSION=1.13.0
+ENV LANG=C.UTF-8
 
 COPY --from=node /usr/local/bin/node /usr/local/bin
 COPY --from=node /usr/local/lib/node_modules /usr/local/lib/node_modules
